@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Say you have a list of lists where each value in the inner lists is a one-character string, like this:
 
@@ -42,4 +43,4 @@ grid = [['.', '.', '.', '.', '.', '.'],
 for x in range(len(grid[0])): #traversing along the x axis
     print()
     for y in range(len(grid)): #traversing along the y axis
-        print(grid[y][x], end='')
+        print(grid[y][x],end = '')
