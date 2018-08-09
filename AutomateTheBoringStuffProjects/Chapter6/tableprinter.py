@@ -14,17 +14,17 @@ tableData = [['apples','oranges','cherries','bananas'],
              ['dogs','cats','moose','goose']]
 
 
-def printTable(tableData):
+def printTable(data):
 #find the longest string in each of the inner lists 
 #so that the whole column can be wide enough to fit 
 #all the strings
-    colWidths = [0] * len(tableData)
+    colWidths = [0] * len(data)
     for i in colWidths:
-        colWidths = max(tableData[i],key=len)  #using max to return the longest string
+        colWidths = max(data[i],key=len)  #using max to return the longest string
     y = len(colWidths)   #storing the max width of each column
     
-    for x in range(len(tableData[0])):
-        print(str(tableData[0][x]).rjust(y) +str(tableData[1][x]).rjust(y)+ str(tableData[2][x]).rjust(y)) #
+    for x in range(len(data[0])):
+        print(str(data[0][x]).rjust(y) +str(data[1][x]).rjust(y)+ str(data[2][x]).rjust(y)) #
 
 printTable(tableData)
     
