@@ -8,6 +8,8 @@ def happyBirthday(person):
 
 def main():
     userName = input("Enter the Birthday person's name: ")
+    print("")
     happyBirthday(userName)
+    
 
 main()

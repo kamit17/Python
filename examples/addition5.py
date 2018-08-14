@@ -4,8 +4,9 @@ Handle keyboard input separately.
 
 def sumProblem(x, y):
     sum = x + y
-    sentence = 'The sum of {} and {} is {}.'.format(x, y, sum)
-    print(sentence)
+    #sentence = 'The sum of {} and {} is {}.'.format(x, y, sum)
+    #print(sentence)
+    print('The sum of {} and {} is {}.'.format(x, y, sum))
 
 def main():
     sumProblem(2, 3)
@@ -15,3 +16,4 @@ def main():
     sumProblem(a, b)
 
 main() 
+print(sumProblem(a,b))
