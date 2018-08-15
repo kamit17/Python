@@ -4,4 +4,3 @@ print([], type([]))
 print(True, type(True))
 print(None, type(None))
 
-# code to put in a for-each loop for the Pattern Loop Exercise
