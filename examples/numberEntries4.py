@@ -11,5 +11,7 @@ def main():
     numberList(['red', 'orange', 'yellow', 'green'])
     print()
     numberList(['apples', 'pears', 'bananas'])
+    print()
+    numberList(['Havana', 'Bahamas', 'Goa'])
 
 main()
