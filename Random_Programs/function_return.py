@@ -8,7 +8,7 @@ Created on Wed Aug  8 22:16:02 2018
 
 def maximum(x,y):
     if x > y:
-        #return x
+        return x
     elif x == y:
         return 'The numbers are equal'
     else:
