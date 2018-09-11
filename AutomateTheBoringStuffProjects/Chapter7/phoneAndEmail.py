@@ -16,11 +16,16 @@ phoneRegex = re.compile(r'''(
 			(\s|-|\.)?                                    #Seperator
 			(\d{3})                                       #first 3 digits
 			(\s|-|\.)                                     #seperator
-			(\d{4})									      #last 4 digits
+			(\d{4})									        #last 4 digits
 			(\s*(ext|x|ext.)\s*(\d{2,5}))?                #extension
 			)''',re.VERBOSE)
 
 #TODO: create a regex for email addressses
+emailRegex = re.compile(r'''(
+        [a-zA-Z0-9._%+-]+
+        @
+        [a-zA-Z0-9.])
+                        )
 
 #TOTO: Get the text off the clipboard
 
