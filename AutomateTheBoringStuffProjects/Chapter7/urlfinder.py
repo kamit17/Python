@@ -15,15 +15,19 @@ urlRegex = re.compile(r'''(
 (www\.)?                    #optional www.
 [a-zA-Z0-9.-]+               #domain name
 (\.[a-zA-Z]{2,4})         #.com something
-(:[0-9]{1,5})
 )''',re.VERBOSE)
 
+#urlRegex1 is advanced version which you can use to find anything after http or https
+urlRegex1 = re.compile(r'''
+http[s]?://   #http:// or https://
+(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+
+''',re.VERBOSE)
 #TODO: Find matches in clipboard text
 text = pyperclip.paste()
 
 #matches = []
 
 #extract the url to clipboard
-urlextract = urlRegex.findall(text)
+urlextract = urlRegex1.findall(text)
 #Copy results to clipboard
 print(urlextract)
