@@ -10,12 +10,12 @@ import re,pyperclip
 #https://google.com 
 #http://google.com
 #http://www.google.com
-urlRegex = re.compile(r'''(
+urlRegex = re.compile(r'''((
 ^(http:\/\/|https:\/\/)+   #http part (mandatory)
 (www\.)?                    #optional www.
 [a-zA-Z0-9.-]+               #domain name
-(\.[a-zA-Z]{2,4})         #.com something
-)''',re.VERBOSE)
+(\.[a-zA-Z]{2,4})?         #.com something
+))''',re.VERBOSE)
 
 #urlRegex1 is advanced version which you can use to find anything after http or https
 urlRegex1 = re.compile(r'''
@@ -25,9 +25,14 @@ http[s]?://   #http:// or https://
 #TODO: Find matches in clipboard text
 text = pyperclip.paste()
 
-#matches = []
+
 
 #extract the url to clipboard
-urlextract = urlRegex1.findall(text)
+urlextract = urlRegex.findall(text)
+allUrls=[]
+for url in urlextract:
+    allUrls.append(url[0])
 #Copy results to clipboard
-print(urlextract)
+results = '\n'.join(allUrls)
+print(results)
+#pyperclip.copy(results)

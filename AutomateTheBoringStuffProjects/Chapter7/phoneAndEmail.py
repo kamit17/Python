@@ -30,15 +30,7 @@ emailRegex = re.compile(r'''(
 
 #Find matches in clipboard text
 
-text = pyperclip.paste()
 
-#matches = []
-
-#extract the url to clipboard
-urlextract = phoneRegex.findall(text)
-#Copy results to clipboard
-print(urlextract)
-'''
 text = str(pyperclip.paste())
 matches = []                        #Store matches
 for groups in phoneRegex.findall(text):
@@ -55,6 +47,6 @@ if len(matches) > 0:
 	print('Copied to clipboard:')
 	print('\n'.join(matches))
 else:
-	print('No phone numbers or email addresses found.')'''
+	print('No phone numbers or email addresses found.')
 
 
