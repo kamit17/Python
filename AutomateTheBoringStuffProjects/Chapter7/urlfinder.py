@@ -15,7 +15,7 @@ urlRegex = re.compile(r'''((
 (www\.)?                    #optional www.
 [a-zA-Z0-9.-]+               #domain name
 (\.[a-zA-Z]{2,4})?         #.com something
-))''',re.VERBOSE)
+)''',re.VERBOSE)
 
 #urlRegex1 is advanced version which you can use to find anything after http or https
 urlRegex1 = re.compile(r'''
