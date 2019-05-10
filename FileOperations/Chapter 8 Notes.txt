@@ -1,0 +1,46 @@
+https://blockgeeks.com/guides/python-blockchain/#What_You_Need_To_Start_Off
+
+Chapter 8 notes :
+
+os.path.join() function. If you pass it the string values of individual file and folder names in your path, 
+os.path.join() will return a string with a file path using the correct path separators .
+
+>>> import os
+>>> os.path.join('usr','bin','spam')
+'usr/bin/spam'
+>>> 
+
+The os.path.join() function is helpful if you need to create strings for filenames which will be passed to file-related functions. 
+
+>>> myFiles = ['accounts.txt','details.csv','invite.txt']
+>>> 
+>>> for filename in myFiles:                                                                                                                         
+...     print(os.path.join('/home/ubuntu/environment/FileOperations',filename))
+... 
+/home/ubuntu/environment/FileOperations/accounts.txt
+/home/ubuntu/environment/FileOperations/details.csv
+/home/ubuntu/environment/FileOperations/invite.txt
+
+
+The Current Working Directory:
+You can get the current working directory as a string value with the os.getcwd() function and change it with os.chdir().
+>>> import os
+>>> os.getcwd()
+'/home/ubuntu/environment/FileOperations'
+>>> os.chdir('/home/ubuntu/environment')
+>>> os.getcwd()
+'/home/ubuntu/environment'
+>>> os.chdir('/home/ubuntu/environment/FileOperations')
+>>> os.getcwd()
+'/home/ubuntu/environment/FileOperations'
+
+
+Absolute vs. Relative Paths
+* Absolute path - begins with the root folder
+* Relative path - Relative to the program's current working directory 
+
+OS.MAKEDIRS() -- Creates new directories
+
+OS.PATH Module -  Contains many helpful functions related to filenames and fie path .
+
+Handling Absolute and Relative Paths
