@@ -1,16 +1,16 @@
 https://blockgeeks.com/guides/python-blockchain/#What_You_Need_To_Start_Off
+---------------------------------------------------------------------------------
+Chapter 8 notes 
+---------------------------------------------------------------------------------
 
-Chapter 8 notes :
-
-os.path.join() function. If you pass it the string values of individual file and folder names in your path, 
-os.path.join() will return a string with a file path using the correct path separators .
+** os.path.join() --  If you pass it the string values of individual file and folder names in your path, os.path.join() will return a string with a file path using the correct path separators .
 
 >>> import os
 >>> os.path.join('usr','bin','spam')
 'usr/bin/spam'
 >>> 
 
-The os.path.join() function is helpful if you need to create strings for filenames which will be passed to file-related functions. 
+** The os.path.join() function is helpful if you need to create strings for filenames which will be passed to file-related functions. 
 
 >>> myFiles = ['accounts.txt','details.csv','invite.txt']
 >>> 
@@ -21,9 +21,11 @@ The os.path.join() function is helpful if you need to create strings for filenam
 /home/ubuntu/environment/FileOperations/details.csv
 /home/ubuntu/environment/FileOperations/invite.txt
 
-
+---------------------------------------------------------------------------------
 The Current Working Directory:
-You can get the current working directory as a string value with the os.getcwd() function and change it with os.chdir().
+---------------------------------------------------------------------------------
+** os.chdir() -- You can get the current working directory as a string value with the os.getcwd() function and change it with os.chdir().
+
 >>> import os
 >>> os.getcwd()
 '/home/ubuntu/environment/FileOperations'
@@ -34,13 +36,83 @@ You can get the current working directory as a string value with the os.getcwd()
 >>> os.getcwd()
 '/home/ubuntu/environment/FileOperations'
 
-
+---------------------------------------------------------------------------------
 Absolute vs. Relative Paths
+---------------------------------------------------------------------------------
 * Absolute path - begins with the root folder
 * Relative path - Relative to the program's current working directory 
 
-OS.MAKEDIRS() -- Creates new directories
+** OS.MAKEDIRS() -- Creates new directories
 
-OS.PATH Module -  Contains many helpful functions related to filenames and fie path .
+** OS.PATH Module -  Contains many helpful functions related to filenames and file path .
 
+
+---------------------------------------------------------------------------------
 Handling Absolute and Relative Paths
+---------------------------------------------------------------------------------
+
+os.path module provides functions for returning the absolute path of a relative path and for checking whehter a given path is an absolute path.
+
+**  os.path.abspath(path)-- Returns a string of the absolute path of the argument. Easy waty to convert relaive path to absolute path.
+
+>>> import os
+>>> os.path.abspath('.')
+'/Users/maverick/GitHub/Python/FileOperations'
+>>> 
+
+>>> os.path.abspath('./Scripts')
+'/Users/maverick/GitHub/Python/FileOperations/Scripts'
+>>> 
+
+
+** os.path.isabs(path)-- Returns True if argument is an absolute path.
+
+**  os.path.relpath(path,start) -- Retruns a string of relative path from start path to path.
+
+** os.path.basename(path) : Returns the basename of the file. Basically returns the file name from the path given.
+
+>>> out = os.path.basename('/Users/maverick/GitHub')
+>>> print(out)
+GitHub
+
+
+** os.path.dirname(path) -- Returns the directory name for the path.
+
+>>> out = os.path.dirname('/Users/maverick/GitHub')
+>>> print(out)
+/Users/maverick
+
+
+**  os.path.split() - To get  a tuple value with the strins as path's dir name and base name together.
+
+>>> Condapath = '/Users/maverick/anaconda3/Anaconda-Navigator.app'
+>>> os.path.split(Condapath)
+('/Users/maverick/anaconda3', 'Anaconda-Navigator.app')
+>>> 
+
+---------------------------------------------------------------------------------
+Finding File Sizes and Folder Contents:
+---------------------------------------------------------------------------------
+
+*os.path.getsize(path)-- will return the size in bytes of the file in the path argument.
+
+>>> os.path.getsize(Condapath)
+96
+
+
+** os.listdir(path) -- returns a list of filename strings for each file in the path argument
+>>> os.listdir('/Users/maverick/GitHub/Python')
+['myCats.py', 'RegularExpressions', 'FlowControl', 'Random_Programs', 'W3Resource Exercises', 'Classes', 'FileOperations', 'DataTypes', 'ProjectEuler', 'README.md', 'JupyterNotebooks', '.gitignore', 'mydata.db', 'Variables_Strings', 'AutomateTheBoringStuffProjects', 'examples', 'Practice Python', 'Functions', '.git', 'Modules', 'ex50']
+
+
+
+---------------------------------------------------------------------------------
+Checking Path Validity
+---------------------------------------------------------------------------------
+
+Calling os.path.exists(path) will return True if the file or folder referred to in the argument exists and will return False if it does not exist.
+
+Calling os.path.isfile(path) will return True if the path argument exists and is a file and will return False otherwise.
+
+Calling os.path.isdir(path) will return True if the path argument exists and is a folder and will return False otherwise.
+
