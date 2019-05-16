@@ -1,0 +1,50 @@
+--------------------------------------------------------------------------------------
+File Reading and Writing
+--------------------------------------------------------------------------------------
+There are three steps to reading or writing files in Python.
+
+ Call the open() function to return a File object.
+
+ Call the read() or write() method on the File object.
+
+ Close the file by calling the close() method on the File object.
+
+--------------------------------------------------------------------------------------
+Saving Variables with the shelve Module
+--------------------------------------------------------------------------------------
+You can save variables in your Python programs to binary shelf files using the shelve module.
+
+To read and write data using the shelve module, you first import shelve. Call shelve.open() and pass it a filename, and then store the returned shelf value in a variable. You can make changes to the shelf value as if it were a dictionary. When you’re done, call close() on the shelf value. Here, our shelf value is stored in shelfFile. 
+
+>>> import shelve
+>>> shelfFile = shelve.open('mydata')
+>>> cats = ['Zophie','Pooka','Simon']
+>>> shelfFile['cats']=cats
+>>> shelfFile.close()
+
+shelfFile = shelve.open('mydata')
+>>> type(shelfFile)
+<class 'shelve.DbfilenameShelf'>
+>>> shelfFile['cats']
+['Zophie', 'Pooka', 'Simon']
+>>> shelfFile.close()
+
+
+--------------------------------------------------------------------------------------
+shelf values have keys() and values() methods that will return list-like values of the keys and values in the shelf. Since these methods return list-like values instead of true lists, you should pass them to the list() function to get them in list form.
+--------------------------------------------------------------------------------------
+>>> shelfFile['cats']
+['Zophie', 'Pooka', 'Simon']
+>>> shelfFile.close()
+>>> shelfFile = shelve.open('mydata')
+>>> list(shelfFile.values())
+[['Zophie', 'Pooka', 'Simon']]
+>>> list(shelfFile.keys())
+['cats']
+>>> shelfFile.close()
+
+--------------------------------------------------------------------------------------
+Saving Variables with the pprint.pformat() Function
+--------------------------------------------------------------------------------------
+pprint.pformat() function will return the contents of a list or dictionary text as a string instead of printing it.
+
