@@ -1,6 +1,6 @@
 '''Function with parameter.'''
 
-def happyBirthday(person):
+def happyBirthday(person): #formal parameter
     print("Happy Birthday to you!")
     print("Happy Birthday to you!")
     print("Happy Birthday, dear " + person + ".")
