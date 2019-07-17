@@ -10,4 +10,4 @@ def main():
     happyBirthday('Emily')
     happyBirthday('Andre')
 
-main()
+main() #User interaction

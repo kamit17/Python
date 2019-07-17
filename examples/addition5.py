@@ -16,4 +16,4 @@ def main():
     sumProblem(a, b)
 
 main() 
-print(sumProblem(a,b))
+
