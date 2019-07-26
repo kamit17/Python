@@ -1,0 +1,6 @@
+p = int(1500)
+n = int(4)
+r = float(0.043)
+t = int(input('Enter the number of years: '))
+A = p*(1 + r/n)**(n*t)
+print('Compound interest is : ',A)
