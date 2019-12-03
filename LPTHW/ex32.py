@@ -15,8 +15,7 @@ for fruit in fruits:
 for i in change:
     print(f'I got {i}')
 
-#we can also build lists,
-#empty list
+#we can also build lists,empty list
 elements = []
 
 #then use the range function to do 0 to 5 counts
