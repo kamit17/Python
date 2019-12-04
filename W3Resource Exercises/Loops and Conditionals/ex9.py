@@ -11,6 +11,9 @@ y = 1
 n= 50
 while y <n:
     print(y)
-    x,y= y,x+y
+    x,y= y,x+y# x will be now 1 and y will also be 1 (x+y = 0+1))
+
+   
+    
     
     
