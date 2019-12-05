@@ -1,0 +1,9 @@
+def get_formatted_name(first_name,middle_name,last_name):
+    """Return a full name, neatly formatted."""
+    full_name = first_name + " " +middle_name + " "+ last_name
+    return full_name.title()
+
+musician = get_formatted_name('john','lee','blackmore')
+musician1 = get_formatted_name('lee','John','blackmore')
+print(musician,musician1)
+
