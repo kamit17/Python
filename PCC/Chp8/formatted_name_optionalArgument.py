@@ -8,7 +8,7 @@ to the end of the list of parameters:
 """
 def get_formatted_name(first_name,last_name,middle_name = ''):
     """Return a full name, neatly formatted."""
-    if middle_name: #if the con
+    if middle_name: #if the condition  of middle name being there is True
         full_name = first_name + " " + middle_name + " " + last_name
     else:
         full_name = first_name + " "+ last_name
