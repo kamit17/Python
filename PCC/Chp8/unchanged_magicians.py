@@ -1,8 +1,9 @@
 """
-8-10. Great Magicians: Start with a copy of your program from Exercise 8-9 .
-Write a function called make_great() that modifies the list of magicians by adding
-the phrase the Great to each magician’s name . Call show_magicians() to see that the
-list has actually been modified .
+8-11. Unchanged Magicians: Start with your work from Exercise 8-10 . Call the function
+make_great() with a copy of the list of magicians’ names . Because the original list
+will be unchanged, return the new list and store it in a separate list . Call
+show_magicians() with each list to show that you have one list of the original names
+and one list with the Great added to each magician’s name .
 """
 def show_magicians(magicians):
     """Print the name of each magician in the list."""
@@ -18,33 +19,21 @@ def make_great(magicians):
     while magicians:
         magician = magicians.pop()
         great_magician = magician + ' the Great'
-        #print(great_magician)
         great_magicians.append(great_magician)
 
     # Add the great magicians back into magicians.
     for great_magician in great_magicians:
         magicians.append(great_magician)
+    return magicians
 
 magicians = ['Harry Houdini', 'David Blaine', 'Teller']
 show_magicians(magicians)
 
 print("\n")
-make_great(magicians)
+print("Great magicains")
+#great_magicians = make_great(magicians[:])
+show_magicians(make_great(magicians[:]))
+
+print("\n")
+print("original magicians:")
 show_magicians(magicians)
-
-
-""""
-Just a rough outlay of the program
-def show_magicians(magicians_names):
-    for name in magicians_names:
-       return (name)
-
-def make_great(name):
-    for i in name:
-        print(i + ' the great')
-
-names = ['Medici','Merlin','PC Sarkar']
-great_magicians = []
-show_magicians(names)
-make_great(names)
-"""
