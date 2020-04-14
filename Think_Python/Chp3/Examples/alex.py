@@ -1,6 +1,7 @@
 import turtle   #Allows us to use turtles
 wn = turtle.Screen() # creates a playground for turtles
 alex = turtle.Turtle() # Create a turtle, assign to alex
+#alex.left(3645)
 
 alex.color("red")
 
