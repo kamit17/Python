@@ -3,6 +3,9 @@
 import turtle
 
 def draw_poly(t,n,sz):
+    """
+        Make a Polygon of n sides
+    """
     angle = 360 / n
     for _ in range (n):
         t.forward(sz)
