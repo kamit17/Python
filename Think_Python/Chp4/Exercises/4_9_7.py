@@ -1,24 +1,23 @@
-import turtle
+#  Write a fruitful function sum_to(n) that returns the sum of all
+#  integer numbers up to and including n. So sum_to(10) would be
+#  1+2+3. . . +10 which would return the value 55.
 
-
-
-
-def draw_poly(t, n, z):
-    for i in range(0, n):
-        t.forward(z)
-        t.left(360 / n)
-
-
-def draw_equitriangle(t, sz):
-    draw_poly(t, 3, sz)
+def sum_natural(n):
+    """
+        Function to calculate teh sum of n natural numbers
+    """
+ 
+    counter = 0
+    for a in range(n+1):
+        counter += a
+    return counter
     
-window = turtle.Screen()            # Set up a window and some attributes
-window.bgcolor("lightgreen")
-
-Tom = turtle.Turtle()
-Tom.color("HotPink")
-Tom.pensize(3)
-
-draw_poly(Tom,8,50)
-draw_equitriangle(Tom, 100)
-Window.mainloop()
+print(sum_natural(10))
+    
+#     sum = 0
+#     for i in range (n+1):
+#         sum += i
+#        
+#         return sum
+#     
+# print(sum_natural(10))
