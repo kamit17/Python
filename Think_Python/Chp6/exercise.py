@@ -25,6 +25,12 @@ def test_suite():
     test(day_name(day_num("Thursday"))== "Thursday")
     test(day_num("Dullday") == 5)
     test(day_num("Halloween")== None)
+    
+    #4th Test
+    test(day_add("Monday", 4) ==  "Friday")
+    test(day_add("Tuesday", 0) == "Tuesday")
+    test(day_add("Tuesday", 14) == "Tuesday")
+    test(day_add("Sunday", 100) == "Tuesday")
 
 # The four compass directions can be abbreviated by single-letter strings as “N”, “E”, “S”, and “W”.
 # Write a function turn_clockwise that takes one of these four compass directions as its parameter,
@@ -79,5 +85,18 @@ def day_num(day):
         return day_num[day]
     else:
         return None
+    
+# 4 Write a function that helps answer questions like ‘“Today is Wednesday. I leave on holiday in
+# 19days time. What day will that be?”’ So the function must take a day name and a delta argume
+# -nt— the number of days to add — and should return the resulting day name
+
+def day_add(weekday,num_days):
+    """
+        Function that takes start day and no. of days and returns the corresponding return date .
+    """
+    start_day = day_num(weekday)
+    end_day =(start_day + num_days)%7
+    end_name = day_name(end_day)
+    return end_name
 
 test_suite()
