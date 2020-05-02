@@ -31,6 +31,13 @@ def test_suite():
     test(day_add("Tuesday", 0) == "Tuesday")
     test(day_add("Tuesday", 14) == "Tuesday")
     test(day_add("Sunday", 100) == "Tuesday")
+    test(day_add("Sunday", -1) == "Saturday")
+    test(day_add("Sunday", -7) == "Sunday")
+    test(day_add("Tuesday", -100) == "Sunday")
+    
+    #5th Test
+    test(days_in_month("February")== 28)
+    test(days_in_month("December") == 31)
 
 # The four compass directions can be abbreviated by single-letter strings as “N”, “E”, “S”, and “W”.
 # Write a function turn_clockwise that takes one of these four compass directions as its parameter,
@@ -99,4 +106,27 @@ def day_add(weekday,num_days):
     end_name = day_name(end_day)
     return end_name
 
+# 6 Write a function days_in_month which takes the name of a month, and returns the number of
+#  days in the month. Ignore leap years
+
+def days_in_month(name):
+    """
+        Function that takes the name of month and returns the number of days .
+    """
+    month_length = {
+                    "January":31,
+                    "February":28,
+                    "March": 31,
+                     "April": 30,
+                     "May": 31,
+                     "June": 30,
+                     "July": 31,
+                     "August": 31,
+                     "September": 30,
+                     "October": 31,
+                     "November": 30,
+                     "December": 31
+                    }
+    if name in month_length:
+        return month_length[name]
 test_suite()
