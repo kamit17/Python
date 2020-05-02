@@ -35,9 +35,23 @@ def test_suite():
     test(day_add("Sunday", -7) == "Sunday")
     test(day_add("Tuesday", -100) == "Sunday")
     
-    #5th Test
+    #6th Test
     test(days_in_month("February")== 28)
     test(days_in_month("December") == 31)
+    test(days_in_month("Aprial") == None)
+    
+    #7th test
+    test(to_secs(2, 30, 10)== 9010)
+    test(to_secs(2, 0, 0)== 7200)
+    test(to_secs(0, 2, 0)== 120)
+    test(to_secs(0, 0, 42)== 42)
+    test(to_secs(0, -10, 10)== -590)
+    test(to_secs(2.5, 0, 10.71)== 9010)
+    
+#     9th test
+    test(hours_in(9010)== 2)
+    test(minutes_in(9010)== 30)
+    test(seconds_in(9010)== 10)
 
 # The four compass directions can be abbreviated by single-letter strings as “N”, “E”, “S”, and “W”.
 # Write a function turn_clockwise that takes one of these four compass directions as its parameter,
@@ -129,4 +143,29 @@ def days_in_month(name):
                     }
     if name in month_length:
         return month_length[name]
+    
+# Write a function to_secs that converts hours, minutes and seconds to a total number of seconds.
+
+def to_secs(hours,minutes,seconds):
+    """Function to convert hours, minutues and seconds to total number of seconds"""
+    convert = (3600 *hours + 60 *minutes+seconds)
+    return int(convert)
+
+# Write three functions that are the “inverses” of to_secs:    
+# hours_in returns the whole integer number of hours represented by a total number ofseconds
+
+def hours_in(seconds):
+    return (seconds//3600)
+    
+#minutes_in returns the whole integer number of left over minutes in a total number ofseconds,
+# once the hours have been taken out.
+
+def minutes_in(seconds):
+    return(seconds%3600)//60
+
+# seconds_in returns the left over seconds represented by a total number of seconds
+
+def seconds_in(x):
+    return x % 60
+
 test_suite()
