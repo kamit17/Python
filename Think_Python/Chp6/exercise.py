@@ -77,7 +77,10 @@ def test_suite():
     
 #14th test   
     test(is_even(-2))
-    test(is_even(-5))
+#     test(is_even(-5))
+    
+    test(is_odd(-1))
+    test(not is_odd(4))
 
 # The four compass directions can be abbreviated by single-letter strings as “N”, “E”, “S”, and “W”.
 # Write a function turn_clockwise that takes one of these four compass directions as its parameter,
@@ -241,8 +244,17 @@ def intercept(x1, y1, x2, y2):
 # Write a function called is_even(n) that takes an integer as an argument and returns True if theargument is an even
 # number and False if it is odd.
 
-def is_even(integer):
-    if integer % 2 == 0:
+def is_even(n):
+    if type(n) == int:
+        return n % 2 == 0
+    
+# Now write the function is_odd(n) that returns True when n is odd and False otherwise.Include unit tests for this
+# function too.Finally, modify it so that it uses a call to is_even to determine if its argument is an odd integer,
+# and ensure that its test still pass.
+
+def is_odd(n):
+#     not is_even(n)
+    if n %2 !=0:
         return True
     else:
         return False
