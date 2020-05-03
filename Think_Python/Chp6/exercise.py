@@ -78,9 +78,21 @@ def test_suite():
 #14th test   
     test(is_even(-2))
 #     test(is_even(-5))
-    
+# 15th test  
     test(is_odd(-1))
     test(not is_odd(4))
+    
+# 16th Test  
+    test(is_factor(3, 12)== True)
+    test(is_factor(5, 12)== False)
+    test(is_factor(7, 14)== True)
+    test(is_factor(7, 15)== False)
+    test(is_factor(1, 15)== True)
+    test(is_factor(15, 15)== True)
+    test(is_factor(25, 15)== False)
+    
+
+
 
 # The four compass directions can be abbreviated by single-letter strings as “N”, “E”, “S”, and “W”.
 # Write a function turn_clockwise that takes one of these four compass directions as its parameter,
@@ -258,5 +270,9 @@ def is_odd(n):
         return True
     else:
         return False
+
+# 16
+def is_factor(f, n):
+    return n % f == 0
 
 test_suite()
