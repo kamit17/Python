@@ -59,6 +59,22 @@ def test_suite():
     test(compare(2, 3)== -1)
     test(compare(42, 1)== 1)
 
+#12th Test
+    test(hypotenuse(3, 4) == 5.0)
+    test(hypotenuse(12, 5) == 13.0)
+    test(hypotenuse(24, 7) == 25.0)
+    test(hypotenuse(9, 12) == 15.0)
+    
+    test(slope(5, 3, 4, 2)== 1.0)
+    test(slope(1, 2, 3, 2)== 0.0)
+    test(slope(1, 2, 3, 3)== 0.5)
+    test(slope(2, 4, 1, 2)== 2.0)
+ 
+#  13th test
+    test(intercept(1, 6, 3, 12)== 3.0)
+    test(intercept(6, 1, 1, 6)== 7.0)
+    test(intercept(4, 6, 12, 8)== 5.0)
+
 # The four compass directions can be abbreviated by single-letter strings as “N”, “E”, “S”, and “W”.
 # Write a function turn_clockwise that takes one of these four compass directions as its parameter,
 # and returns the next compass direction in the clockwise direction. Here are some tests that should pass:
@@ -184,6 +200,39 @@ def compare(a,b):
         return 0
     else:
         return -1
+    
+
+# Write a function called hypotenuse that returns the length of the hypotenuse of a right triangle given the lengths
+# of the two legs as parameters:
+
+def hypotenuse(base,height):
+    """Function to return length of hypotenuse"""
+    hypotenuse = (base **2 + height **2) ** 0.5
+    return hypotenuse
+    
+
+#Write a function slope(x1, y1, x2, y2) that returns the slope of the line through the points (x1,y1) and (x2, y2)
+
+def slope(x1, y1, x2, y2):
+    """ Finds the slope of a line"""
+    dy = y2-y1
+    dx = x2-x1
+    return (dy/dx)
+
+# Then use a call to slope in a new function named intercept(x1, y1, x2, y2) that returns the y-intercept of the line
+# through the points (x1, y1) and (x2, y2)
+
+def intercept(x1, y1, x2, y2):
+    """ Function that returns the y intercept of the line using the formula y = mx + b where b is the y intercept
+         and m is the slope
+    """
+#     using the slope function to calculate m
+    m = slope(x1, y1, x2, y2)
+#     y = m * x + b
+    b = y1 - m * x1
+    
+    return b
+    
     
 
 test_suite()
