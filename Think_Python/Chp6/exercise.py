@@ -53,6 +53,12 @@ def test_suite():
     test(minutes_in(9010)== 30)
     test(seconds_in(9010)== 10)
 
+# 11th test
+    test(compare(5, 4)== 1)
+    test(compare(7, 7)== 0)
+    test(compare(2, 3)== -1)
+    test(compare(42, 1)== 1)
+
 # The four compass directions can be abbreviated by single-letter strings as “N”, “E”, “S”, and “W”.
 # Write a function turn_clockwise that takes one of these four compass directions as its parameter,
 # and returns the next compass direction in the clockwise direction. Here are some tests that should pass:
@@ -165,7 +171,19 @@ def minutes_in(seconds):
 
 # seconds_in returns the left over seconds represented by a total number of seconds
 
-def seconds_in(x):
-    return x % 60
+def seconds_in(seconds):
+    return seconds % 60
+
+# Write a compare function that returns 1 if a > b, 0 if a == b, and -1 if a < b
+
+def compare(a,b):
+    """ Function to compare """
+    if a > b:
+        return 1
+    elif a ==b:
+        return 0
+    else:
+        return -1
+    
 
 test_suite()
