@@ -91,8 +91,30 @@ def test_suite():
     test(is_factor(15, 15)== True)
     test(is_factor(25, 15)== False)
     
-
-
+# 17th test
+    test(is_multiple(12, 3)== True)
+    test(is_multiple(12, 4)== True)
+    test(is_multiple(12, 5)== False)
+    test(is_multiple(12, 6)== True)
+    test(is_multiple(12, 7)== False)
+    
+# 18th test   
+    test(f2c(212)== 100)     # boiling point of water
+    test(f2c(32)== 0)        # freezing point of water
+    test(f2c(-40)== -40)     # Wow, what an interesting case!
+    test(f2c(36)== 2)
+    test(f2c(37)== 3)
+    test(f2c(38)== 3)
+    test(f2c(39)== 4)
+    
+# 19th Test
+    test(c2f(0)== 32)
+    test(c2f(100)== 212)
+    test(c2f(-40)== -40)
+    test(c2f(12)== 54)
+    test(c2f(18)== 64)
+    test(c2f(-48)== -54)
+    
 
 # The four compass directions can be abbreviated by single-letter strings as “N”, “E”, “S”, and “W”.
 # Write a function turn_clockwise that takes one of these four compass directions as its parameter,
@@ -274,5 +296,24 @@ def is_odd(n):
 # 16
 def is_factor(f, n):
     return n % f == 0
+
+# 17
+def is_multiple(x,y):
+#     return (x % y ==0)
+      return is_factor(y, x)
+    
+# 18 Write the function f2c(t) designed to return the integer value of the nearest degree Celsius forgiven tempurature
+# in Fahrenheit. (hint: you may want to make use of the built-in function,round.)
+
+def f2c(t):
+    """Takes a temperature t in Fahrenheit and returns a Celsius 
+    temperature rounded to the nearest degree."""
+    return round( (t-32) / 1.8)
+
+def c2f(t):
+    """Takes a temperature t in Celsius and returns a Fahrenheit 
+    temperature rounded to the nearest degree."""
+    return round(1.8*t + 32)
+    
 
 test_suite()
