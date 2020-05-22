@@ -24,8 +24,18 @@ def play_once(human_plays_first):
 def play_game():
     """Function to call the function play_game"""
     n = input("Do you want to play a game?")
+    human = 0   # counter to keep score
+    computer = 0
+    draws = 0
+    games = 0  # counter to keep games played
 
     while n == "Yes":
+        for i in (True,False):    #add logic so that players take turn first
+            outcome = play_ince(i)
+            if outcome == -1:
+                human += 1 # counter to keep score
+                games += 1 # counter to keep games played
+                percentage_won = (human /games) * 100
         play_once()
         print("You win","\n","Game drawn")
 
