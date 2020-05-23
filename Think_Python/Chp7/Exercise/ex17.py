@@ -8,7 +8,7 @@ def play_once(human_plays_first):
     Must play ne round of the game . If the parameter is true, the human gets to play first, esle the computer gets to play first. When the round ends, the return value of the function is one of -1(human wins),0(game drawn),1(computer wins).
     """
     #This is all dummy scaffolding code right at the moment
-    import ratdom
+    import random
     rng = random.Random()
     #pick a random result between -1 and 1
     result = rng.randrange(-1,2)
@@ -31,17 +31,43 @@ def play_game():
 
     while n == "Yes":
         for i in (True,False):    #add logic so that players take turn first
-            outcome = play_ince(i)
+            outcome = play_once(i)
             if outcome == -1:
                 human += 1 # counter to keep score
                 games += 1 # counter to keep games played
-                percentage_won = (human /games) * 100
-        play_once()
-        print("You win","\n","Game drawn")
+                percentage_won = (human /games) * 100  # percentage of wins for human
+                print("you win" "\n"
+                      "your score: ",human,
+                      "My Score: ",computer,
+                      "Draws: ",draws,"\n",
+                      'You won ',percentage_won, '% of all games palyed!')
+                n = input('Do you want to play again? ')
+            elif outcome == 0:
+                draws += 1
+                games += 1
+                percentage_won = (human/games) * 100
+                print("you win" "\n"
+                      "your score: ",human,
+                      "My Score: ",computer,
+                      "Draws: ",draws,"\n",
+                      'You won ',percentage_won, '% of all games palyed!')
+                n = input('Do you want to play again? ')
+                
+            elif outcome == 1:
+                draws += 1
+                games += 1
+                percentage_won = (human/games) * 100
+                print("you win" "\n"
+                      "your score: ",human,
+                      "My Score: ",computer,
+                      "Draws: ",draws,"\n",
+                      'You won ',percentage_won, '% of all games palyed!')
+                n = input('Do you want to play again? ')
 
-    else:
-        print("Goodbye")
-    return
+            else:
+                print("Goodbye")
+            return 
+
 
 play_game()
 
