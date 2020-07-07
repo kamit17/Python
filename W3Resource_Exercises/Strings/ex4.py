@@ -6,8 +6,8 @@ Expected Result : 'resta$t'
 """
 
 string1 = input('Enter the string : ')
-char = string1[0]
-print(string1[1:])
-string1 = string1.replace(char, '$')
-string1 = char + string1[1:]
+char = string1[0] #returns r
+print(string1[1:]) #returns estart
+string1 = string1.replace(char, '$')  #substituting $ in place of r
+string1 = char + string1[1:] # r + esta$t
 print(string1)
