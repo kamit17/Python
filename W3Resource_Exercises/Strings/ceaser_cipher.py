@@ -25,7 +25,7 @@ def getMessage():
 def getKey():
     key = 0
     while True:
-        print('Enter the key number (1-%s)' %(MAX_KEY_SIZE))
+        print('Enter the key number (1-%s)' %(MAX_KEY_SIZE))  #%26 so that we can handle loop around .https://teachen.info/cspp/unit4/lab04-02.html
         key = int(input())
         if (key >= 1 and key <= MAX_KEY_SIZE):
             return key
