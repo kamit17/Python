@@ -1,0 +1,12 @@
+tuples are immutable
+
+Why use tuples ?
+If you don't want to change data. Tuple iterates faster.
+to reference data in a tuple
+print(x[1])
+
+data structure - a mechanism for grouping and organizing data to make ti easier to use.
+ tuple can be used to group any number of items into a single compound value.
+
+ tuples are useful for representing what other languages call records.
+
