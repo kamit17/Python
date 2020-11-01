@@ -5,13 +5,18 @@ from test_suite import test
 
 def add_vectors(u,v):
     """ Function to add two vectors"""
-    #print("What are the elements of the first vector")
-    #c = []
 
-    sum = [u[0]+v[0],u[1]+v[1]]
 
-    return sum
+    #sum = [u[0]+v[0],u[1]+v[1]]
+    #iterate through rows
+    result = []   #initialize a result variable to be an empty list
+    for i in range(0,len(u)): #loop
+        result.append(u[i] + v[i]) #create a new element and append it to result
+    return (result)
+
 
 test(add_vectors([1, 1], [1, 1]) == [2, 2])
+test(add_vectors([1, 2], [1, 4]) == [2, 6])
+test(add_vectors([1, 2, 1], [1, 4, 3]) == [2, 6, 4])
 
 
