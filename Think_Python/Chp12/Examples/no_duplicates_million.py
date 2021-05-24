@@ -20,6 +20,6 @@ def make_random_ints_no_dups(num, lower_bound,upper_bound):
         result.append(candidate)
     return result
 
-#xs = make_random_ints_no_dups(5,1,1000000)
-xs = make_random_ints_no_dups(10,1,6)
+xs = make_random_ints_no_dups(5,100000,1000000)
+#xs = make_random_ints_no_dups(10,1,6)
 print(xs)
