@@ -1,0 +1,4 @@
+1 dog,[snake,dog],cat
+2 cat
+3 mambo
+4 no.5
