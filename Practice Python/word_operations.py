@@ -118,4 +118,38 @@ for word in wordlist:
     if len(word) > longest:
         longest=len(word)
         longest_word=word
-print(longest_word)
+print(longest_word,file=file1)
+
+#all palindromes
+for word in wordlist:
+    words = list(reversed(word))
+    words = "".join(words)
+    if word == words:
+        
+        print(words,word,file=file1)
+        
+#Same as above, but only print one word out of each pair.
+for word in wordlist:
+    words = list(reversed(word))
+    words = "".join(words)
+    if words == word:
+        print(word,file= file1)
+        
+
+#All words that contain double letters next each other like aardvark or book, excluding words that end in lly
+
+print("All words that contain double letters next each other like aardvark or book, excluding words that end in lly")      
+letters=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+answer_l = []
+for words in wordlist:
+    for letter in letters:
+        if letter *2 in words and words[:-3] !="ily":
+            answer_l.append(words)
+print("\n")
+print(answer_l,file=file1)
+
+
+ #All words that contain a q that isn't followed by a u
+ 
+       
+file1.close()
