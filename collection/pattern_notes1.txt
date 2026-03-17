@@ -1,0 +1,41 @@
+Start with full grid
+
+- - - - -
+- - - - -
+- - - - -
+- - - - -
+- - - - -
+
+fill each row with number
+1 1 1 1 1
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4
+5 5 5 5 5
+
+to print this gride
+
+row loop
+    column loop till 5
+    print(row)
+
+
+2) Remove the extra numbers
+1 1 1 1 1
+2 2 2 2
+3 3 3
+4 4
+5
+
+looking at the original grid, we are just stopping printing earlier each row
+
+Row                     How many printed
+1                           5
+2                           4
+3                           3
+4                           2
+5                           1
+
+formula becomes
+columns = total_rows - row + 1 --> 5 - row + 1
+
