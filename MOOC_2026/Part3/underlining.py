@@ -3,10 +3,6 @@ Please write a program which asks the user for strings using a loop. The program
 
 '''
 
-
-
-
-
 while True:
     input_string = input("Please type in a string: ")
     if input_string == '':

@@ -6,7 +6,7 @@ Please write a new version of the program in the previous exercise. In addition 
 limit = int(input("Limit:"))
 number = 1
 sum = 0
-expression = ""
+expression = "" # emtpy string for holding the consecutive sum strings
 while sum <=limit:
     sum += number
     if expression == "":
