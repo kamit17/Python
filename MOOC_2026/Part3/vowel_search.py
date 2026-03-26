@@ -7,7 +7,7 @@ You may assume the input will be in lowercase entirely. Have a look at the examp
 
 input_string = "hello there"
 
-vowels = "aeiou"
+#vowels = "aeiou"
 for vowel in "aeiou":
     if vowel in input_string:
         print(f"{vowel} is there")
