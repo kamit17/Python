@@ -11,7 +11,7 @@ elsa = turtle.Turtle()
 elsa.speed(15)
 
 # create a list of colours
-sfcolor = ["white", "blue", "purple", "grey", "magenta"]
+sfcolor = ["white", "blue", "purple", "yellow", "grey", "magenta","orange"]
 
 # create a function to create different size snowflakes
 def snowflake(size):
