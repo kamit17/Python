@@ -129,5 +129,8 @@ dmypy.json
 pyvenv.cfg
 pip-selfcheck.json
 
+.virtual_documents
+anaconda_projects
+*.kate-swp
 
 # End of https://www.gitignore.io/api/python
